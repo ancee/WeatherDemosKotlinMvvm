@@ -33,9 +33,9 @@ class WeatherViewModel(application: Application) : AndroidViewModel(application)
         //Log.e("v", "save date:" + myDate)
         val currentDateTime = Date(System.currentTimeMillis())
         // find different between current and save
-        var diff = saveDateTime?.let { findDifferenceDate(currentDateTime, it) }
+        val diff = saveDateTime?.let { findDifferenceDate(currentDateTime, it) }
         //if above 2 hour get from api other wise from db
-        val isAboveTwo: Boolean? = diff?.let { if (it >= 2) true else false }
+        val isAboveTwo: Boolean? = diff?.let { it >= 2 }
         isAboveTwo?.let { weatherRepo?.requestForWeatherData(WeatherModelObserver, city, it) }
 
 

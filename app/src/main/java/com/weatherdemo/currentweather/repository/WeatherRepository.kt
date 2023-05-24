@@ -29,7 +29,7 @@ class WeatherRepository(val application: Application) {
         isFromApi: Boolean
     ) {
 
-        var dbInstance =
+        val dbInstance =
             Room.databaseBuilder(application, WeatherDataBase::class.java, MainActivity.DB_NAME).build()
 
 
@@ -133,9 +133,8 @@ class WeatherRepository(val application: Application) {
 
     companion object {
 
-        var AppId = "ec07920ce7f4bbeecbed28072a3af207"
-        /*       var lat = "35"
-               var lon = "139"*/
+        var AppId = "add your app id"
+
     }
 
 
